@@ -1,0 +1,29 @@
+<!-- search.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Worm {% endblock %}
+{% block content %}
+<div class = "card mt-3">
+    <div class="card-header fs-5 fw-bold">
+        Search
+    </div>
+    <div id="message"></div>
+    <div class='card-body'>
+        <form id="ajax_form">
+            <script>csrf_token= "{{ csrf_token }}"</script>
+            <label for="gene_id" class="form-label">Gene ID:</label>
+            <input type="text" class="form-control" name="gene_id" placeholder="eg. WBGene00000010 or Y110A7A.10.1">    
+        </form>
+        <hr>
+        <button class="btn btn-outline-primary" id="submit">送出</button>
+    </div>
+<div>
+<script src="{% static 'js/form.js' %}"></script>
+{% endblock %}
+# try:
+    #     if is_valid_gene_id(gene_id):
+    #         gene = models.Gene.objects.get(gene_id=gene_id)
+    #         transcript = gene.transcript_id
+    #         numbers = gene.numbers
+    #         message = 'Transcript ID: ' + transcript + '<br>Numbers: ' + str(numbers) 
+    #     else:

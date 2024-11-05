@@ -1,0 +1,84 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} show {% endblock %}
+{% block content %}
+{% comment %} <div class="container">
+    <img src="{% static 'images/gene_structure.png' %}" class="figure-img img-fluid mb-5">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Gene ID </th>
+                <th scope="col">Transcript ID</th>
+                <th scope="col">numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for gene in genes %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ gene.gene_id }}</td>
+                <td>{{ gene.transcript_id | cut:"'" }}</td>
+                <td>{{ gene.numbers }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div> {% endcomment %}
+<h1>前十筆資料</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>count</th>
+            <th>wormbase_id</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.name}}</td>
+            <td>{{ item.duplicate_count }}</td>
+            <td>{{ item.wormbase_ids }}</td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% comment %} <table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Wormbase ID</th>
+            <th>Status</th>
+            <th>Sequence Name</th>
+            <th>Gene Name</th>
+            <th>Other Names</th>
+            <th>Transcript</th>
+            <th>Type</th>
+            <th>Count</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.wormbase_id }}</td>
+            <td>{{ item.status }}</td>
+            <td>{{ item.sequence_name }}</td>
+            <td>{{ item.gene_name }}</td>
+            <td>{{ item.other_names }}</td>
+            <td>{{ item.transcript }}</td>
+            <td>{{ item.type }}</td>
+            <td>{{ item.count }}</td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> {% endcomment %}
+
+{% endblock %}

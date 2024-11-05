@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Form Test {% endblock %}
+{% block content %}
+<header class="py-3 mb-5 text-center bg-dark shadow">
+    <h2 class="text-light">Transcript Analysis</div>
+</header>
+<div class="container">
+    <div class="card mt-3">
+        
+        <div class="card-header fs-5 fw-bold">
+            Search
+        </div>
+        <div id="message"></div>
+        <div class='card-body'>
+            <form id="ajax_form">    
+                <label for="search" class="form-label">Gene ID or Transcript Name:</label>
+                <input type="text" class="form-control" name="search" placeholder="eg. WBGene00000010 or Y110A7A.10.1">
+            </form>
+            <hr>
+            <button class="btn btn-outline-primary" id="submit">送出</button>
+        </div><hr>
+            <table id="myTable" class="display table-bordered  table table-responsive  table-hover">
+                <thead>
+                    <tr>
+                        <th scope ="col" >Gene ID</th>
+                        <th scope ="col">Transcript ID</th>
+                        <th scope ="col">Numbers</th>
+                    </tr>
+                </thead>
+                <tbody id ='table'>
+                    
+                    
+                </tbody>
+            </table>
+            <div id="name"></div>
+            <div class="card mt-3 " name="trancriptdataTable-2">
+                <mark>Unspliced</mark>
+                <div class="container1">
+                    <table id="unsplicedTable" class="display table-bordered  table table-responsive  table-hover ">
+                        <thead>
+                            <tr>
+                                <th scope ="col">Name</th>
+                                <th scope ="col">Start</th>
+                                <th scope ="col">End</th>
+                                <th scope ="col">Length</th>
+                            </tr>
+                        </thead>
+                        <tbody ></tbody>
+                    </table>
+                    <div class="text-content" id="RNA_UNSPLICED">
+                        <h5>UNSPLICED+UTR</h5>
+                        <p id="unsplicedText"class="rna-content" ></p>
+                    </div>
+                </div>
+            </div>
+            {% comment %} d3 {% endcomment %}
+            <div id="chart1" ></div>
+            <div id="chart2" ></div>
+            <div id="tooltip" style="position: absolute; opacity: 0; background-color: lightgray; padding: 5px; border-radius: 3px; pointer-events: none;"></div>
+        <div class="card mt-3 " name="trancriptdataTable-2">
+            <mark>Spliced</mark>
+            <div class="container1">
+                <table id="splicedTable" class="display table-bordered  table table-responsive  table-hover ">
+                    <thead>
+                        <tr>
+                            <th scope ="col">Name</th>
+                            <th scope ="col">Start</th>
+                            <th scope ="col">End</th>
+                            <th scope ="col">Length</th>
+                        </tr>
+                    </thead>
+                    <tbody ></tbody>
+                </table>
+                <div class="text-content" id="RNA_SPLICED">
+                    <h5>SPLICED+UTR</h5>
+                    <p id="splicedText" class="rna-content" ></p>
+                </div>
+            </div>
+        </div>
+        
+            <mark>Conceptual Translation</mark>  
+            <div class="protein-text">
+                <p id="protein" class="rna-content"></p>  
+            </div>
+            
+    </div>
+    
+    
+</div>
+<script src="{% static 'js/form.js' %}"></script>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock %}

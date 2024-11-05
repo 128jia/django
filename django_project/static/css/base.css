@@ -1,0 +1,80 @@
+.text-center {
+    text-align: center;
+}
+
+body{
+  margin: 0px 8px;
+  /* font-family: Roboto, Helvetica, Arial, sans-serif; */
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-weight: 400;
+  font-size: 2.125rem;
+  line-height: 1.235;
+  letter-spacing: 0.00735em;
+  color: #00b5ad;
+  /* margin: 0;
+  padding: 0;
+  font: 16px Arial; */
+  height: 100vh;
+}
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+.footer {
+  background-color: #333;
+  color: azure;
+  height: 2em;
+  margin-top: 1em;
+  /* 因為通常 footer 也跟 navbar 一樣會是固定的尺寸，所以這邊可以大膽的設定高度，為了區隔上方的內容，所以用了 margin-top */
+}
+
+.row{
+  margin-bottom: 10px;
+}
+/* 
+.card-title{
+  letter-spacing: 0.3vw;
+} */

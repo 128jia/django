@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Data Form</title>
+    <style>
+        header {
+            background-color: black; /* 黑色底色 */
+            color: white;            /* 白色文字 */
+            padding: 20px;           /* 内边距 */
+            text-align: center;      /* 文字居中 */
+            font-size: 24px;         /* 文字大小 */
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="/get_stock_data1/">
+        {% csrf_token %}
+        <label for="stock1">Select Stock 1:</label>
+        <select id="stock1" name="stock1">
+            <option value="AAPL">AAPL</option>
+            <option value="GLD">GLD</option>
+            <option value="MSFT">MSFT</option>
+            <option value="UUP">UUP</option>
+        </select>
+        
+        <label for="stock2">Select Stock 2:</label>
+        <select id="stock2" name="stock2">
+            <option value="AAPL">AAPL</option>
+            <option value="GLD">GLD</option>
+            <option value="MSFT">MSFT</option>
+            <option value="UUP">UUP</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

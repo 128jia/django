@@ -1,0 +1,68 @@
+#container, #container2 {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+/* #profitTable_wrapper {
+    display: flex;
+    justify-content: center;
+} */
+
+/* 表格本身宽度设置为80% */
+#profitTable {
+    width: 80%;
+}
+
+/* 表头和单元格文本水平居中 */
+#profitTable th, 
+#profitTable td {
+    text-align: center;
+    vertical-align: middle;
+}
+.green-column {
+    background-color: green;
+    color: green;
+} 
+.red-column {
+    background-color: red;
+    color: red;
+}
+#positions-table_wrapper, #profitTable_wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.dataTables_wrapper .dataTables_length {
+    float: left;
+    margin-top: 10px;
+}
+
+.dataTables_wrapper .dataTables_info {
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* 設定共同的容器寬度 */
+.chart-and-table-container {
+    width: 80%; /* 根據需求調整 */
+    margin: 0 auto;
+}
+
+/* 設置 Highcharts 圖表和表格的寬度 */
+#container, #container2, #positions-table_wrapper, #profitTable_wrapper {
+    width: 100%;
+}

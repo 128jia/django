@@ -1,0 +1,70 @@
+
+
+
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- Bootstrap CSS & JS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--datatable-->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+        <!--stock price -->
+        <script src="https://code.highcharts.com/stock/highstock.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+
+        <title>
+            Trading Views
+        </title>
+    </head>
+    <body>
+      <div class="chart-and-table-container">
+        <!-- header -->
+        <div id="container"></div>
+        <div id="container2"></div>
+        <!-- content -->
+        <table id="positions-table" class="display">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Open Date</th>
+                    <th>Open AAPL Price</th>
+                    <th>Open GLD Price</th>
+                    <th>Close Date</th>
+                    <th>Close AAPL Price</th>
+                    <th>Close GLD Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id ="profitContainer"></div>
+        <!-- footer -->
+        <table id="profitTable" class="display">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>AAPL Action</th>
+                    <th>AAPL Price</th>
+                    <th>GLD Action</th>
+                    <th>GLD Price</th>
+                    <th>Profit Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+      </div>
+    </body>
+    <link rel="stylesheet" href="{% static 'css/F_main.css' %}">
+    <script src="{% static 'js/F_table.js' %}"></script>
+</html>
+

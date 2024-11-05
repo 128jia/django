@@ -1,0 +1,142 @@
+<!-- (w293)home.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} WormBase_W293 {% endblock %}
+{% block content %}
+
+<header class="header-area overlay">
+    <nav class="navbar navbar-expand-md navbar-dark">
+     <div class="container">
+      <a class="navbar-brand" href="#" style="font-weight: bold">
+       WormBase W293
+      </a>
+      <button class="navbar-toggler collapsed" data-target="#main-nav" data-toggle="collapse" type="button">
+       <span class="menu-icon-bar">
+       </span>
+       <span class="menu-icon-bar">
+       </span>
+       <span class="menu-icon-bar">
+       </span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-nav" style="align-content: flex-start;">
+       <ul class="navbar-nav ms-auto">
+        <li>
+         <a class="nav-item nav-link active" href="/w293/">
+          Search
+         </a>
+        </li>
+        <li>
+         <a class="nav-item nav-link" href="/w293/Browse/">
+          Browse
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </nav>
+</header>
+<script src="{% static 'js/header.js' %}"></script>
+<div class="container-fluid" style="min-height: 100%;"><div class="container-fluid" style="min-height: 100%;">
+<div class="row d-flex align-items-center my-3"> 
+    <div class="col-5 text-center">
+        <div style="font-size:1.5em;">
+            <strong>Input a gene or transcript to search:(ex.2L52.1a.1)</strong>
+        </div>
+    </div>  
+    <div class="col-5" id="target_search">
+        <div class="autocomplete w-100" style="text-align: center;">
+            <form id='ajax' method="POST">
+                {% csrf_token %}
+                <input id="search-input" name="query" placeholder="fbxb-97" type="text" class="form-control" style="font-size: 1.2em; height: 2.5em;"/>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<button class="btn btn-outline-info mx-auto w-50 my-3 ms-5" id="submit" style="font-size: 2rem;">Search</button>
+<table id="data-table">
+    <thead>
+        <tr>
+            <th>Wormbase ID</th>
+            <th>Status</th>
+            <th>Sequence Name</th>
+            <th>Gene Name</th>
+            <th>Other Names</th>
+            <th>RNA Name</th>
+            <th style="width: 100px;">RNA type</th>
+            <th style="width: 30px;">Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- 数据将通过AJAX填充 -->
+    </tbody>
+</table>
+<div id="loading" class="loading-spinner" style="display: none;">
+    <div class="spinner"></div>
+</div>
+<!--d3-->
+<div id="data" style="display: flex; flex-direction: column; align-items: center; margin-top: 50px;">
+    <div id="transcript-id-display" style="color: black; font-size: 20px; font-weight: bold;"></div>
+    <div id="chart1" ></div>
+    <div id="chart2" ></div>
+    
+</div>
+<div id="chart_m0" style="height: 400px; width: 100%;"></div>
+<div id="chart_m1" style="height: 400px; width: 100%;"></div>
+<div id="chart_m2" style="height: 400px; width: 100%;"></div>
+<!---->
+<div class="card mt-3 " name="trancriptdataTable-2">
+    <div id="chart1" ></div>
+    <div id="chart2" ></div>
+    <mark>Unspliced</mark>
+    <div class="container1">
+        <table id="unsplicedTable" class="display table-bordered  table table-responsive  table-hover ">
+            <thead>
+                <tr>
+                    <th scope ="col">Name</th>
+                    <th scope ="col">Start</th>
+                    <th scope ="col">End</th>
+                    <th scope ="col">Length</th>
+                </tr>
+            </thead>
+            <tbody ></tbody>
+        </table>
+        <div class="text-content" id="RNA_UNSPLICED">
+            <h5>UNSPLICED+UTR</h5>
+            <p id="unsplicedText"class="rna-content" ></p>
+        </div>
+    </div>
+</div>
+<div class="card mt-3 " name="trancriptdataTable-2">
+    <mark>Spliced</mark>
+    <div class="container1">
+        <table id="splicedTable" class="display table-bordered  table table-responsive  table-hover ">
+            <thead>
+                <tr>
+                    <th scope ="col">Name</th>
+                    <th scope ="col">Start</th>
+                    <th scope ="col">End</th>
+                    <th scope ="col">Length</th>
+                </tr>
+            </thead>
+            <tbody ></tbody>
+        </table>
+        <div class="text-content" id="RNA_SPLICED">
+            <h5>SPLICED+UTR</h5>
+            <p id="splicedText" class="rna-content" ></p>
+        </div>
+    </div>
+</div>
+<mark>Conceptual Translation</mark>  
+<div class="protein-text">
+    <p id="protein" class="rna-content"></p>  
+</div>
+<link rel="stylesheet" href="{% static 'css/search_main.css' %}">
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="{% static 'js/w293_search.js' %}"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+{% endblock %} 

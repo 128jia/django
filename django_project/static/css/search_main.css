@@ -1,0 +1,80 @@
+#loading {
+    display: none;
+}
+
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
+
+/* .card-title{
+    letter-spacing: 0.3vw;
+} */
+
+#result{
+    display: none;
+}
+
+#result_repeat{
+    display: none;
+}
+
+#result_normal{
+    display: none;
+}
+
+.table{
+    font-size: 1em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid rgb(151, 147, 147);
+}
+
+th {
+    background-color: #f2f2f2;
+}
+.loading-spinner {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* #mrna_abundance th, #srna_abundance1 th, #srna_abundance2 th, #srna_abundance3 th, #srna_abundance4 th, #mrna_abundance td, #srna_abundance1 td, #srna_abundance2 td, #srna_abundance3 td, #srna_abundance4 td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid rgb(151, 147, 147);
+}
+
+#mrna_abundance th, #srna_abundance1 th, #srna_abundance2 th, #srna_abundance3 th, #srna_abundance4 th {
+    background-color: #f2f2f2;
+} */

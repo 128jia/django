@@ -1,0 +1,56 @@
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* 縮小表格寬度 */
+#unsplicedTable {
+    width: 40%; /* 調整為你希望的寬度 */
+}
+
+.text-content {
+    width: 60%; /* 剩下的空間給文字內容 */
+    padding-right: 50px; /* 調整間距 */
+}
+.protein-text {
+    
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#splicedTable {
+    width: 20%; /* 調整為你希望的寬度 */
+}
+.rna-content  {
+    font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
+    white-space: pre-wrap; /* Preserve white space and line breaks */
+    line-height: 1; /* Adjust the line height if necessary */
+    font-size: 20px;
+    color:black;
+}
+.line-number {
+    color: lightgray; /* 設置數字為淺灰色 */
+    font-weight: bold;
+    margin-right: 10px; /* 行號與序列之間的間距 */
+    display: inline-block;
+    width: 50px; /* 調整數字的寬度，使其向右對齊 */
+    text-align: right; /* 使數字向右對齊 */
+}
+.tooltip {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #a05454;
+    padding: 5px;
+    display: none;
+  }
+.tooltip:hover {
+    opacity: 1;
+}
+.tip {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+    background: white;
+    padding: 15px 15px;
+  }

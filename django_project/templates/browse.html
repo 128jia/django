@@ -1,0 +1,210 @@
+<!-- (w293)browse.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} WormBase_W293 {% endblock %}
+{% block content %}
+<!--   header   -->
+<header class="header-area overlay">
+    <nav class="navbar navbar-expand-md navbar-dark">
+     <div class="container">
+      <a class="navbar-brand" href="#" style="font-weight: bold">
+       WormBase W293
+      </a>
+      <button class="navbar-toggler collapsed" data-target="#main-nav" data-toggle="collapse" type="button">
+       <span class="menu-icon-bar">
+       </span>
+       <span class="menu-icon-bar">
+       </span>
+       <span class="menu-icon-bar">
+       </span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-nav" style="align-content: flex-start;">
+       <ul class="navbar-nav ms-auto">
+        <li>
+         <a class="nav-item nav-link active" href="/w293/">
+          Search
+         </a>
+        </li>
+        <li>
+         <a class="nav-item nav-link" href="/w293/Browse/">
+          Browse
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </nav>
+</header>
+<script src="{% static 'js/header.js' %}"></script>
+<!--body-->
+<div class="accordion-item">
+    <button aria-controls="nc" aria-expanded="true" class="accordion-button" data-bs-target="#nc" data-bs-toggle="collapse" type="button">
+     <h2>
+      Browse by:
+     </h2>
+    </button>
+<form method="POST" id ="browseform">
+        {% csrf_token %}
+    <div class="accordion-collapse collapse show" data-bs-parent="#accordionExample" id="nc">
+     <div class="accordion-body row">
+      <div class="">
+        <!--select all-->
+       {% comment %} <div class="form-check">
+        <input class="form-check-input" id="selectAll" name="selectAll" style="transform: scale(0.8);" type="checkbox"/>
+        <label class="form-check-label" for="selectAll">
+         <strong>
+          Select All
+         </strong>
+        </label>
+       </div> {% endcomment %}
+       
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc1" name="nc" style="transform: scale(0.8);" type="checkbox" value="ncRNA"/>
+        <label class="form-check-label" for="nc1">
+         ncRNA
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc2" name="nc" style="transform: scale(0.8);" type="checkbox" value="circular_ncRNA"/>
+        <label class="form-check-label" for="nc2">
+         circular_ncRNA
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc4" name="nc" style="transform: scale(0.8);" type="checkbox" value="tRNA"/>
+        <label class="form-check-label" for="nc4">
+         tRNA
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc5" name="nc" style="transform: scale(0.8);" type="checkbox" value="miRNA"/>
+        <label class="form-check-label" for="nc5">
+         miRNA
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc6" name="nc" style="transform: scale(0.8);" type="checkbox" value="snoRNA"/>
+        <label class="form-check-label" for="nc6">
+         snoRNA
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc7" name="nc" style="transform: scale(0.8);" type="checkbox" value="lincRNA"/>
+        <label class="form-check-label" for="nc7">
+         lincRNA
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc8" name="nc" style="transform: scale(0.8);" type="checkbox" value="snRNA"/>
+        <label class="form-check-label" for="nc8">
+         snRNA
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc9" name="nc" style="transform: scale(0.8);" type="checkbox" value="asRNA"/>
+        <label class="form-check-label" for="nc9">
+         asRNA
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc10" name="nc" style="transform: scale(0.8);" type="checkbox" value="rRNA"/>
+        <label class="form-check-label" for="nc10">
+         rRNA
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc11" name="nc" style="transform: scale(0.8);" type="checkbox" value="miRNA_primary_transcript"/>
+        <label class="form-check-label" for="nc11">
+         miRNA_primary_transcript
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc12" name="nc" style="transform: scale(0.8);" type="checkbox" value="scRNA"/>
+        <label class="form-check-label" for="nc12">
+         scRNA
+        </label>
+       </div>
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc13" name="nc" style="transform: scale(0.8);" type="checkbox" value="nc_primary_transcript"/>
+        <label class="form-check-label" for="nc13">
+         nc_primary_transcript
+        </label>
+       </div>       
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc14" name="nc" style="transform: scale(0.8);" type="checkbox" value="pre-miRNA"/>
+        <label class="form-check-label" for="nc14">
+         pre-miRNA
+        </label>
+       </div>       
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc15" name="nc" style="transform: scale(0.8);" type="checkbox" value="transposable_element_ncRNA"/>
+        <label class="form-check-label" for="nc15">
+         transposable_element_ncRNA
+        </label>
+       </div>       
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc16" name="nc" style="transform: scale(0.8);" type="checkbox" value="piRNA"/>
+        <label class="form-check-label" for="nc16">
+         piRNA
+        </label>
+       </div>       
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc17" name="nc" style="transform: scale(0.8);" type="checkbox" value="Transposon-mRNA"/>
+        <label class="form-check-label" for="nc17">
+         Transposon-mRNA
+        </label>
+       </div>       
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc18" name="nc" style="transform: scale(0.8);" type="checkbox" value="Transposon-pseudogenic_transcript"/>
+        <label class="form-check-label" for="nc18">
+            Transposon-pseudogenic_transcript
+        </label>
+       </div>       
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc19" name="nc" style="transform: scale(0.8);" type="checkbox" value="Transposon-non-coding_transcript"/>
+        <label class="form-check-label" for="nc19">
+            Transposon-non-coding_transcript
+        </label>
+       </div>       
+       <div class="form-check ncrna">
+        <input class="form-check-input" id="nc20" name="nc" style="transform: scale(0.8);" type="checkbox" value="pseudogenic_transcripts"/>
+        <label class="form-check-label" for="nc20">
+            pseudogenic_transcripts
+        </label>
+       </div>
+      </div>
+    </div>
+    <div class="row d-flex mx-5 my-5 text-center"> 
+        <button class="btn btn-outline-info mx-auto w-50 my-3" id="submit" style="font-size: 2rem;"> Search</button>
+    </div>
+</form>
+    <div class="col-md-11 my-5 card mx-auto border-primary border border-3 rounded-3" id="result_regulator" style="overflow: auto;">
+      <div class="row card-header">
+          <div class="text-center card-title text-primary" style="font-weight:600; font-size: 3.5rem;">
+           Browse Result
+          </div>
+      </div>
+      <table id="resultTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Wormbase ID</th>
+                <th>Sequence Name</th>
+                <th>Gene Name</th>
+                <th>Other Names</th>
+                <th>RNA Name</th>
+                <th>Status</th>
+                <th>RNA Type</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    
+    </div>
+</div>
+<link rel="stylesheet" href="{% static 'css/search_main.css' %}">
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<script src="{% static 'js/w293_browse.js' %}"></script>
+{% endblock %}
